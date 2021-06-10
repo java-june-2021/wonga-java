@@ -4,7 +4,7 @@ public class BasicJavaTest {
         // challenger.challenge1();
         // challenger.challenge2();
         // challenger.challenge3();
-        int x = {1,3,5,7,9,13};
+        int[] x = {1,3,5,7,9,13};
         challenger.challenge4(x);
     }
 }
