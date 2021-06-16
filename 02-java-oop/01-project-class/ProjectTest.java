@@ -8,6 +8,7 @@ public class ProjectTest{
         System.out.println(projectTwo.description);
         System.out.println(projectThree.description);
         //Figure out how to invoke elevatorPitch
-        System.out.println();
+        System.out.println(projectOne.elevatorPitch());
+
     }
 }

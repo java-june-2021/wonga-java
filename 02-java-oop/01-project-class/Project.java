@@ -20,8 +20,9 @@ public class Project {
     }
 
     //Revisit the input paramtera here. 
-    public void elevatorPitch(String name, String description){
-        System.out.println(this.name + " : "+ this.description);
+    public String elevatorPitch(){
+        // System.out.println(this.name + " : "+ this.description);
+        return this.name + " : "+ this.description;
     }
 
     //Methods go here
