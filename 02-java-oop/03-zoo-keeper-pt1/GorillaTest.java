@@ -1,4 +1,4 @@
-public class zooKeepOneTest{
+public class GorillaTest{
     public static void main(String[] args) {
         Gorilla nope = new Gorilla();
         Gorilla jane = new Gorilla("jane");
