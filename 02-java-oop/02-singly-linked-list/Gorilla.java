@@ -1,21 +1,14 @@
-public class zooKeepOne {
+public class Gorilla {
     public String name;
     public Integer energyLevel;
 
     // Constructor
-    public Mammal(Integer energyLevel){
-        this.energyLevel = energyLevel;
-    }
-
     public Gorilla(String name, Integer energyLevel){
         this.name = name;
         this.energyLevel = energyLevel;
     }
 
     // Method Overloading
-    public Mammal() {
-        this.energyLevel = 100;
-    }
 
     public Gorilla(String name) {
         this.name = name;
@@ -24,7 +17,7 @@ public class zooKeepOne {
 
     public Gorilla() {
         this.name = "Test";
-        this.energyLevel = "Test";
+        this.energyLevel = 100;
     }
 
     //Revisit the input paramtera here. 
@@ -55,7 +48,7 @@ public class zooKeepOne {
     }
 
     public Integer getenergyLevel(){
-        return this.name;
+        return this.energyLevel;
     }
 
 
