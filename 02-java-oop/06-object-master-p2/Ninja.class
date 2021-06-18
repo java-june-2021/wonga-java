@@ -1,0 +1,17 @@
+public class Ninja extends Human{
+    public Ninja () {
+        super("Ninja", 3, 10, 3, 100)
+    }
+    public Integer steal(Human target){
+        target.health -= this.stealth;
+        this.health += this.stealth;
+        return target.health;
+        //How do you return both target health AND this health??
+    }
+    public Integer runAway(){
+        this.health -= 10;
+        return this.health;
+    }
+}
+
+//    public Human(String name, Integer strength, Integer stealth, Integer intelligence, Integer health){
