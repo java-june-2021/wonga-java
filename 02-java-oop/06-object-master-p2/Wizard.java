@@ -1,6 +1,7 @@
 public class Wizard extends Human{
     public Wizard () {
-        super("Wizard", 3, 3, 8, 50)
+        this.intelligence = 8;
+        this.health = 50;
     }
     public Integer heal(Human target){
         target.health += this.intelligence;
