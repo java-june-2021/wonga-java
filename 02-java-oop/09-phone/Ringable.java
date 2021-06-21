@@ -1,7 +1,7 @@
 public interface Ringable {
     // your code here
-    void ring();
+    String ring();
 
-    void unlock();
+    String unlock();
 
 }
