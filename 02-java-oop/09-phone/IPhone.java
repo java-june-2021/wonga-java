@@ -18,3 +18,5 @@ public class IPhone extends Phone implements Ringable {
         System.out.println("the Iphone Ring Tone is: " + this.getRingTone());
     }
 }
+
+//Explain why we can't call this.versionNumber
