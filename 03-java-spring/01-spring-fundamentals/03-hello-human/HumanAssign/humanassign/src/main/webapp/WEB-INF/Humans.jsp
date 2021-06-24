@@ -10,6 +10,7 @@
 <link rel=”stylesheet” href=”/css/style.css”>
 </head>
 <body>
+	<h5><a href="/your_server/"><c:out value="${link}"/></a></h5>
 	<h1>Hello <c:out value="${tester}"/></h1>
 	<p> Welcome to SpringBoot!</p>
 </body>

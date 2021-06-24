@@ -17,6 +17,7 @@ public class HumansController {
 	public String customGreeting(@PathVariable("your_name") String the_name, Model model) {		
 		your_name=the_name;
 		model.addAttribute("tester", your_name);
+		model.addAttribute("link", "Go back");
 		return "Humans.jsp";
 	}
 }
