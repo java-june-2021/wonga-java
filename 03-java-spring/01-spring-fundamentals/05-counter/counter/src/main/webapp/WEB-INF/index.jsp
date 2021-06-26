@@ -5,14 +5,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Time Page</title>
+<link rel=”stylesheet” href=”/css/style.css”>
+<title>Counter homepage</title>
 <link rel=”stylesheet” href=”/css/style.css”>
 </head>
 <body>
-	<script>
-		alert("This is the time template");
-	</script>
-	<h4><c:out value="${date}"/></h4>
-	<h3><c:out value="${date}"/></h3>
+	<p> Counter home page </p>
+	<h4>Visited the page count: <c:out value="${count}"/></h4>
+<a href="/counter">Counter1</a>
+<a href="/counter2">Counter2</a>
 </body>
 </html>
