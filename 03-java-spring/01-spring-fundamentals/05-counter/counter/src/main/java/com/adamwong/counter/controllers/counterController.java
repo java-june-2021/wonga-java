@@ -21,10 +21,11 @@ public class counterController {
 	        }
 	        Integer currentCount = (Integer) session.getAttribute("count");
 	        currentCount++;
-	        session.setAttribute("count", currentCount);
-	        Integer doubleCount = (Integer) session2.getAttribute("double_count");
-	        doubleCount++;
-	        doubleCount++;
+	        session.setAttribute("count", currentCount)
+//This stuff doesn't work!
+//	        Integer doubleCount = (Integer) session2.getAttribute("double_count");
+//	        doubleCount++;
+//	        doubleCount++;
 //	        session2.setAttribute("double_count", doubleCount);
 	        return "index.jsp";
 	    }
@@ -37,7 +38,11 @@ public class counterController {
 		return "counter.jsp";
 	}
 	@RequestMapping("/counter2")
-	public String counter2Func(HttpSession session2) {
+	public String counter2Func(HttpSession session, HttpSession session2) {
+        if(session.getAttribute("count") == null) {
+            // no key found!  set session "count" to 0
+            session.setAttribute("count", 0);
+        }
         if(session2.getAttribute("count2") == null) {
             // no key found!  set session "count" to 0
             session2.setAttribute("count2", 0);

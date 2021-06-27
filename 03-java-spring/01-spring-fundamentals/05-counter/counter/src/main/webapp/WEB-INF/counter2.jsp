@@ -10,7 +10,7 @@
 </head>
 <body>
 	<p> Counter page X2 </p>
-		<h4>Visited the page count: <c:out value="${double_count}"/></h4>
+		<h4>Visited the page count: <c:out value="${count*2}"/></h4>
 	<a href="/">Home Page</a>
 	<a href="/counter">Counter</a>
 	<a href="/counter2">Counter2</a>
