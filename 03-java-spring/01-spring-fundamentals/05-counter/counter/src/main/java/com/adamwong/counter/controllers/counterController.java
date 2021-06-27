@@ -9,25 +9,44 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class counterController {
 
 	@RequestMapping("/")
-	    public String index(HttpSession session){
-	        // check if a key exists in session with the name "count"
+	    public String index(HttpSession session, HttpSession session2){
+//	         check if a key exists in session with the name "count"
 	        if(session.getAttribute("count") == null) {
 	            // no key found!  set session "count" to 0
 	            session.setAttribute("count", 0);
 	        }
+	        if(session2.getAttribute("count2") == null) {
+	            // no key found!  set session "count" to 0
+	            session2.setAttribute("count2", 0);
+	        }
+	        Integer currentCount = (Integer) session.getAttribute("count");
+	        currentCount++;
+	        session.setAttribute("count", currentCount);
+	        Integer doubleCount = (Integer) session2.getAttribute("double_count");
+	        doubleCount++;
+	        doubleCount++;
+//	        session2.setAttribute("double_count", doubleCount);
 	        return "index.jsp";
 	    }
 	@RequestMapping("/counter")
-	public String counterFunc() {
+	public String counterFunc(HttpSession session) {
+        if(session.getAttribute("count") == null) {
+            // no key found!  set session "count" to 0
+            session.setAttribute("count", 0);
+        }
 		return "counter.jsp";
 	}
 	@RequestMapping("/counter2")
-	public String counter2Func() {
+	public String counter2Func(HttpSession session2) {
+        if(session2.getAttribute("count2") == null) {
+            // no key found!  set session "count" to 0
+            session2.setAttribute("count2", 0);
+        }
 		return "counter2.jsp";
 	}
+	@RequestMapping("/reset")
+	public String Reset(HttpSession session) {
+		session.invalidate();
+		return "redirect:/counter";
+	}
 }
-//	
-//	LocalDateTime now = LocalDateTime.now();
-//	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE',' 'the' dd 'of' MMMM',' YYYY");
-//	System.out.println(formatter.format(now));
-//	model.addAttribute("date", formatter.format(now));
