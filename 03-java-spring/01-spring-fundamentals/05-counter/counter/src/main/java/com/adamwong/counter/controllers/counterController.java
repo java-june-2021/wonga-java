@@ -21,7 +21,7 @@ public class counterController {
 	        }
 	        Integer currentCount = (Integer) session.getAttribute("count");
 	        currentCount++;
-	        session.setAttribute("count", currentCount)
+	        session.setAttribute("count", currentCount);
 //This stuff doesn't work!
 //	        Integer doubleCount = (Integer) session2.getAttribute("double_count");
 //	        doubleCount++;
