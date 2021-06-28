@@ -11,6 +11,10 @@
 </head>
 <body>
 <p>Hello result page</p>
+<p>Your Name: <c:out value="${ name }"/><p>
+<p>Location: <c:out value="${ location }"/><p>
+<p>Language: <c:out value="${ language }"/><p>
+<p>Comment: <c:out value="${ comment }"/><p>
 	<a href="/">Home Page</a>
 	<a href="/survey">Survey Result</a>
 </body>

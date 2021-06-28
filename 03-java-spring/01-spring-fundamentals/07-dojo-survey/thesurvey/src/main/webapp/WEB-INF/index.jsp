@@ -13,15 +13,25 @@
 </head>
 <body>
 <p>Hello survey home page</p>
-	<form action="/result" method="post">
-	  <label for="fname">Your name:</label>
-	  <input type="text" id="yname" name="yname"><br><br>
+	<form action="/trySurvey" method="POST">
+	  <label for="name">Your name:</label>
+	  <input type="text" id="name" name="name"><br><br>
 	  <label for="location">Dojo Location: </label>
-	  <input type="text" id="location" name="location"><br><br>
+	  <select name = "location">
+	  	<option value="San Jose">San Jose </option>
+	  	<option value="Burbank">Burbank </option>
+	  	<option value="Oakland">Oakland </option>
+	  </select>
+	  <br><br>
 	  <label for="language">Favorite Language: </label>
-	  <input type="text" id="language" name="language"><br><br>
+	  <select name = "language">
+	  	<option value="Python">Python </option>
+	  	<option value="Java">Java </option>
+	  	<option value="JavaScript">JavaScript </option>
+	  </select>
+	  <br><br>
 	  <label for="comment">Comment: </label>
-	  <input type="text" id="comment" name="comment"><br><br>
+	  <input type="text" name="comment"><br><br>
 	  <input type="submit" value="button">
 	</form>
 	<a href="/">Home Page</a>
