@@ -32,7 +32,8 @@
 	  <br><br>
 	  <label for="comment">Comment: </label>
 	  <input type="text" name="comment"><br><br>
-	  <input type="submit" value="button">
+	  <!-- <input type="submit" value="button"> -->
+	  <button>Submit</button>
 	</form>
 	<a href="/">Home Page</a>
 	<a href="/survey">Survey Result</a>
