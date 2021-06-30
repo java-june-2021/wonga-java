@@ -31,4 +31,26 @@ public class BookService {
             return null;
         }
     }
+    public Book updateBook(Long id, Book book) {
+    	return this.bookRepository.save(book);
+//        if (id < books.size()){
+//            books.set(id, book);
+//        }
+    }
+    
+    public void destroyBook(Long id) {
+        this.bookRepository.deleteById(id);
+//    	if (id < books.size()){
+//            books.remove(id);
+//        }
+    }
+    
+    public Book findBookByIndex(Long id) {
+    	return this.bookRepository.findById(id).orElse(null);
+//        if (index < books.size()){
+//            return books.get(index);
+//        }else{
+//            return null;
+//        }
+    }
 }
