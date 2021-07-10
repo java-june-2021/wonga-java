@@ -20,7 +20,6 @@ public class LanguageService {
     }
     // creates a book
     public Language createLanguage(Language language) {
-    	System.out.println(language);
         return languageRepository.save(language);
     }
     // retrieves a book
@@ -40,7 +39,6 @@ public class LanguageService {
     }
     
     public void destroyLanguage(Long id) {
-    	System.out.println(id);
         this.languageRepository.deleteById(id);
     }
     
