@@ -10,6 +10,7 @@
 </head>
 <body>
 <a href="/dashboard">Dashboard</a>
-
+	<p>Top Ten Page</p>
+	<!-- How do you query and add songs by a rating amount high to low? -->
 </body>
 </html>

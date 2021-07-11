@@ -10,6 +10,13 @@
 </head>
 <body>
 <a href="/dashboard">Dashboard</a>
-
+	<p>Show Song Page</p>
+	<h5>Name: </h5>
+	<c:out value="${song.name}"/>
+	<h5>Artist: </h5>
+	<c:out value="${song.artist}"/>
+	<h5>Rating: </h5>
+	<c:out value="${song.rating}"/>
+	<br>
 </body>
 </html>

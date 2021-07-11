@@ -10,6 +10,6 @@
 </head>
 <body>
 <a href="/dashboard">Dashboard</a>
-
+	<p>Search Result Page</p>
 </body>
 </html>

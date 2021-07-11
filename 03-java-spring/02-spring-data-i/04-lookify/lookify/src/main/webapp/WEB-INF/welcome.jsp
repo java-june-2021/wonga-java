@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<H1>Welcome to Lookify!</H1>
+<h1>welcome to lookify!</h1>
 <a href="/dashboard">Start Looking!</a>
 </body>
 </html>

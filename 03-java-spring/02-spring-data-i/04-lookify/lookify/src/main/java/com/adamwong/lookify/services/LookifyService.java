@@ -15,15 +15,15 @@ public class LookifyService {
 	    public LookifyService(LookifyRepository lookifyRepository) {
 	        this.lookifyRepository = lookifyRepository;
 	    }
-	    // returns all the books
+	   
 	    public List<Lookify> allSongs() {
 	        return lookifyRepository.findAll();
 	    }
-	    // creates a book
+
 	    public Lookify createSong(Lookify song) {
 	        return lookifyRepository.save(song);
 	    }
-	    // retrieves a book
+
 	    public Lookify findSong(Long id) {
 	        Optional<Lookify> optionalSong = lookifyRepository.findById(id);
 	        if(optionalSong.isPresent()) {
@@ -36,7 +36,7 @@ public class LookifyService {
 	    	return this.lookifyRepository.save(song);
 	    }
 	    
-	    public void destroyLanguage(Long id) {
+	    public void destroySong(Long id) {
 	        this.lookifyRepository.deleteById(id);
 	    }
 	    

@@ -10,7 +10,25 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="/dashboard">Dashboard</a>
-
+	<a href="/dashboard">Dashboard</a>
+	<p>New Song Page</p>
+	    <form:form action="/songs/new" method="post" modelAttribute="song">
+	    <p>
+	        <form:label path="title">Title</form:label>
+	        <form:errors path="title"/>
+	        <form:input path="title"/>
+	    </p>
+	    <p>
+	        <form:label path="artist">Artist</form:label>
+	        <form:errors path="artist"/>
+	        <form:textarea path="artist"/>
+	    </p>
+	    <p>
+	        <form:label path="rating">Rating</form:label>
+	        <form:errors path="rating"/>
+	        <form:input path="rating"/>
+	    </p>
+	    <input type="submit" value="Add Song"/>
+	</form:form>  
 </body>
 </html>

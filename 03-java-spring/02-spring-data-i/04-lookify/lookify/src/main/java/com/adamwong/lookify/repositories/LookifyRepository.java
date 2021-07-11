@@ -9,4 +9,6 @@ import com.adamwong.lookify.models.Lookify;
 @Repository
 public interface LookifyRepository extends CrudRepository<Lookify, Long> {
 	List<Lookify> findAll();
+    List<Lookify> findByArtistContaining(String artist);
+    List<Lookify> findTopTenByOrderByRatingDesc();
 }

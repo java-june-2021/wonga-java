@@ -31,30 +31,67 @@ public class Lookify {
     
     public Lookify() {
     }
-    
+
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
 	public String getTitle() {
 		return title;
 	}
+
 
 	public void setTitle(String title) {
 		this.title = title;
 	}
 
+
 	public String getArtist() {
 		return artist;
 	}
+
 
 	public void setArtist(String artist) {
 		this.artist = artist;
 	}
 
+
 	public Integer getRating() {
 		return rating;
 	}
 
+
 	public void setRating(Integer rating) {
 		this.rating = rating;
 	}
+
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
+
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
 
 	public Lookify(String title, String artist, Integer rating) {
         this.title = title;
@@ -71,4 +108,5 @@ public class Lookify {
     protected void onUpdate(){
         this.updatedAt = new Date();
     }
+
 }
