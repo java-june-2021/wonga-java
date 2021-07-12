@@ -38,16 +38,6 @@ public class DojoandninjaController {
 		 this.dojoandninjaService.createDojo(dojo);
 		 return"redirect:/";
 	 }
-//	 Why isn't it identical to the ninja's new create?
-//	 @PostMapping("/dojos/new")
-//	 public String Create(@Valid @ModelAttribute("dojo") Dojo dojo, BindingResult result, Model model) {
-//		 if(result.hasErrors()) {
-//			 model.addAttribute("dojos", this.dojoandninjaService.allDojos());
-//			 return "/NewDojo.jsp";
-//		 }
-//		 this.dojoandninjaService.createDojo(dojo);
-//		 return"redirect:/";
-//	 }
 	 
 	 @RequestMapping("/ninjas/new")
 	 public String addNewNinja(@ModelAttribute("ninja") Ninja ninja, Model model) {
@@ -67,6 +57,7 @@ public class DojoandninjaController {
 	 @RequestMapping("/dojos/{id}")
 	 public String show(@PathVariable("id") Long id, Model model) {
 		 model.addAttribute("dojo", this.dojoandninjaService.findDojo(id));
+		 System.out.println(dojoandninjaService.findDojo(id));
 		 return "ShowDojo.jsp";
 	 }
 	 @RequestMapping("/dojos/delete/{id}")
