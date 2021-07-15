@@ -17,18 +17,17 @@
 		    <form:form action="/products/new" method="post" modelAttribute="product">
 	    <!--This needs to come pre-populated somehow!?-->
 	    <p>
-		        <form:label path="name">Dojo Name</form:label>
+		        <form:label path="name">Product Name</form:label>
 		        <form:errors path="name"/>
-		        <form:select path="name">
-		        </form:select>
+		        <form:input path="name"/>
 	    </p>
 	    	    <p>
-	        <form:label path="description">First name: </form:label>
+	        <form:label path="description">Description: </form:label>
 	        <form:errors path="description"/>
 	        <form:input path="description"/>
 	    </p>
 	    	    <p>
-	        <form:label path="price">Last name:</form:label>
+	        <form:label path="price">Price:</form:label>
 	        <form:errors path="price"/>
 	        <form:input path="price"/>
 	    </p>

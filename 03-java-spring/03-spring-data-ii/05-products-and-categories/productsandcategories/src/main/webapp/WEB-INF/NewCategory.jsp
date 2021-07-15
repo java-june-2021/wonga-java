@@ -17,10 +17,9 @@
 		    <form:form action="/categories/new" method="post" modelAttribute="category">
 	    <!--This needs to come pre-populated somehow!?-->
 	    <p>
-		        <form:label path="name">Dojo Name</form:label>
+		        <form:label path="name">Name</form:label>
 		        <form:errors path="name"/>
-		        <form:select path="name">
-		        </form:select>
+		        <form:input path="name"/>
 	    </p>
 	    <input type="submit" value="Create"/>
 	    </form:form>

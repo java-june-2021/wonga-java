@@ -44,5 +44,17 @@ public class ProductsandcategoriesService {
 	public void destroyProduct(Long id) {
 		this.productRepo.deleteById(id);
 	}
+	public Category addProdtoCategory(Category category, Product product) {
+		List<Product> products = category.getProducts();
+		products.add(product);
+		return categoryRepo.save(category);
+	}
+	
+	public Product addCattoProduct(Product product, Category category) {
+		List<Category> categories = product.getCategories();
+		categories.add(category);
+		return productRepo.save(product);
+		
+	}
 
 }

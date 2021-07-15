@@ -14,6 +14,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.PostPersist;
 import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
 @Entity
@@ -82,7 +83,7 @@ public class Category {
     protected void onCreate() {
         this.createdAt = new Date();
     }
-    @PostPersist
+    @PreUpdate
     protected void onUpdate() {
         this.updatedAt = new Date();
     }
