@@ -21,15 +21,17 @@
 		        <form:errors path="qText"/>
 		        <form:input path="qText" placeholder="${questions.qText}"/>
 	    </p>
-	    <input type="submit" value="Edit Tag"/>
+	    <input type="submit" value="Edit Question"/>
 	    </form:form>
-<%-- <form:form action="/questions/edit/${questions.id}" method="post" modelAttribute="tag">	    
+ <form action="/tags/edit/${questions.id}" method="post">	    
 		<p>
-		        <form:label path="subject">Edit Tag: </form:label>
-		        <form:errors path="subject"/>
-		        <form:input path="subject" placeholder="${tag.subject}"/>
+			<select name="tagName">
+		    <c:forEach items="${ tags }" var="t">
+		    <option value="${ t.id }">${t.subject}</option>
+		    </c:forEach>
+		    </select>
 	    </p>
 	    <input type="submit" value="Edit Tag"/>
-	    </form:form> --%>
+	    </form>
 </body>
 </html>

@@ -32,8 +32,6 @@ public class Question {
     @Column(updatable=false)
     private Date createdAt;
     private Date updatedAt;
-    @Transient
-    private String tagsFromFrontEnd;
     
 	@OneToMany(mappedBy="question", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	private List<Answer> answers;

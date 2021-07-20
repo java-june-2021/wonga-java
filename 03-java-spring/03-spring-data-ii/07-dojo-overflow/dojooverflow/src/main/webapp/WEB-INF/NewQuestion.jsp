@@ -21,7 +21,16 @@
 		        <form:errors path="qText"/>
 		        <form:input path="qText"/>
 	    </p>
-	    <input type="submit" value="Submit"/>
+	    <input type="submit" value="New Question"/>
+	    </form:form>
+	     		    <form:form action="/tags/new" method="post" modelAttribute="tag">
+	    <!--This needs to come pre-populated somehow!?-->
+	    <p>
+		        <form:label path="subject">Tag: </form:label>
+		        <form:errors path="subject"/>
+		        <form:input path="subject"/>
+	    </p>
+	    <input type="submit" value="New Tag"/>
 	    </form:form>
 </body>
 </html>

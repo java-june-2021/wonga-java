@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.adamwong.dojooverflow.models.Answer;
 import com.adamwong.dojooverflow.models.Question;
@@ -23,6 +24,11 @@ public class DojooverflowController {
     public DojooverflowController(DojooverflowService dojooverflowService) {
     	this.dojooverflowService = dojooverflowService;
     }
+    
+    @RequestMapping("/")
+    public String routeToLogin() {
+    	return"redirect:/login";
+    }
     @RequestMapping("/questions")
     public String displayQuestions(@ModelAttribute("question") Question question, Model model, HttpSession session) {
     	if(session.getAttribute("userId") == null) {
@@ -35,7 +41,7 @@ public class DojooverflowController {
     }
 
     @RequestMapping("/questions/new")
-    public String newQuestion(@ModelAttribute("question") Question question) {
+    public String newQuestion(@ModelAttribute("question") Question question, @ModelAttribute("tag") Tag tag) {
     	return "NewQuestion.jsp";
     }
     
@@ -45,6 +51,15 @@ public class DojooverflowController {
 			 return "/NewQuestion.jsp";
 		 }
 		 this.dojooverflowService.createQuestion(question);
+		
+		 return"redirect:/questions";
+    }
+    @PostMapping("/tags/new")
+    public String postTag(@Valid @ModelAttribute("tag") Tag tag, BindingResult result) {
+		 if(result.hasErrors()) {
+			 return "/NewQuestion.jsp";
+		 }
+		 this.dojooverflowService.createTag(tag);
 		
 		 return"redirect:/questions";
     }
@@ -69,12 +84,21 @@ public class DojooverflowController {
 	@RequestMapping("/questions/edit/{id}")
 	public String viewEditQuestion(@ModelAttribute("question") Question question, @PathVariable("id") Long id, Model model) {
 		model.addAttribute("questions", dojooverflowService.findQuestion(id));
+		model.addAttribute("tags", dojooverflowService.allTags());
 	     return "editQuestion.jsp";
 	 }
 	
 	@PostMapping("/questions/edit/{id}")
 	public String editQuestion(@Valid @ModelAttribute("question") Question question, @PathVariable("id") Long id, @ModelAttribute("tag") Tag tag) {
 		this.dojooverflowService.createQuestion(question);
+	     return "redirect:/questions";
+	 }
+	
+	@PostMapping("/tags/edit/{id}")
+	public String updateQuestion(@RequestParam("tagName") Long tName, @PathVariable("id") Long id, Model model) {
+		Question question = this.dojooverflowService.findQuestion(id);
+		Tag tag = this.dojooverflowService.findTag(tName);
+		this.dojooverflowService.addTagtoQuestion(tag, question);
 	     return "redirect:/questions";
 	 }
 	

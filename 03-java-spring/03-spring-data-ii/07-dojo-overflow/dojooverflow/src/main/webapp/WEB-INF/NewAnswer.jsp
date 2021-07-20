@@ -15,11 +15,20 @@
 <a href="/questions">Go Home</a>
 <a href="/questions/new">New Question</a>
 <p>${questions.qText}</p>  
+<ul>
+<li>All Tags</li>
+	  <c:forEach items="${question.tags}" var="t">
+		<li>
+	        <c:out value="${t.subject}"/>
+	    </li>
+	    </c:forEach>
+</ul>
     	<table>
 		<tr>
 			<th>Answers</th>
 			<th>Actions</th>
 		</tr>
+
 	<!-- This is a for loop -->
 	    <c:forEach items="${answers}" var="a">
 		<tr>

@@ -26,7 +26,7 @@
 		<tr>
 	        <td><a href="/questions/${q.id}"><c:out value="${q.id}"/></a></td>
 	        <td><c:out value="${q.qText}"/></td>
-	        <td><c:out value="${q.tags}"/></td>
+	        	<td><c:forEach items="${q.tags}" var="tag"><c:out value="${tag.subject}"/>,</c:forEach></td>
 	        <td>
 	        	<a href="/questions/delete/${q.id}">Delete</a> | 
 	        	<a href="/questions/edit/${q.id}">Edit</a>

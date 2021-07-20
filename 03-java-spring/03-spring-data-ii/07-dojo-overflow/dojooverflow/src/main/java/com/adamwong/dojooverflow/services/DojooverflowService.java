@@ -12,8 +12,6 @@ import com.adamwong.dojooverflow.models.Tag;
 import com.adamwong.dojooverflow.repositories.AnswerRepository;
 import com.adamwong.dojooverflow.repositories.QuestionRepository;
 import com.adamwong.dojooverflow.repositories.TagRepository;
-import com.adamwong.productsandcategories.models.Category;
-import com.adamwong.productsandcategories.models.Product;
 
 @Service
 public class DojooverflowService {
@@ -37,11 +35,11 @@ public class DojooverflowService {
 //		this.qRepo.save(newQuestion);
 //	}
 //
-//	public Question addTagtoQuestion(Tag tag, Question question) {
-//		List<Tag> tags = question.getTags();
-//		tags.add(question);
-//		return qRepo.save(tag);
-//	}
+	public Question addTagtoQuestion(Tag tag, Question question) {
+		List<Tag> tags = question.getTags();
+		tags.add(tag);
+		return qRepo.save(question);
+	}
 	public Tag createTag(Tag tag) {
 		return tRepo.save(tag);
 	}
